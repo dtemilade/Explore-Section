@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         onEachFeature(feature, layer) {
           const name = feature.properties.LGA_NAME || feature.properties.lga;
-          layer.bindPopup(<strong>${name}</strong>);
+          layer.bindPopup(`<strong>${name}</strong>`);
           layer.on("click", () => {
             const slug = name.toLowerCase().replace(/\s+/g, "-");
-            window.location.href = lga/${slug}.html;
+            window.location.href = `lga/${slug}.html`;
           });
         }
       }).addTo(map);
