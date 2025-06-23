@@ -1,11 +1,21 @@
 /* --- GLOBAL THEME --- */
 :root {
   --green: #8cc354;
-  --blue: #0772ba;
+  --blue: #1705bb;
+  --header-bg-color: #DFE8F9;
+  --header-link-inactive: #1705bb;
+  --header-border-color: #2F3E6D;
+  --discover-section-bg: #1B2956;
+  --brt-banner-bg: #82ABD2;
   --white: #ffffff;
   --black: #000000;
   --grey: #f2f2f2;
   --hover-bg: #e8f5e9;
+  --dark-green-hover: #7ba646;
+  --sky-blue-header: #00173A;
+  --discover-overlay-color: rgba(2, 18, 37, 0.858);
+  --brt-bus-color: #0056B3;
+  --yellow-bus-color: #FFD700;
 }
 
 * {
@@ -16,21 +26,25 @@
 
 body {
   padding-top: 80px;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--grey);
+  color: #333;
 }
 
 input,
 textarea,
 button {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
 }
-/** Containers **/
+
+/* --- Containers --- */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
   padding: 2rem 0;
 }
+
 .map-container {
   width: 100%;
   max-width: 900px;
@@ -38,49 +52,184 @@ button {
   margin: 2rem auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-.discover-section {
-  position: relative;
-  background-image: url('img/discover-lagos.jpg');
-  /* Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* Enables parallax */
-  min-height: 400px;
+  background-color: #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #888;
+}
+
+/* --- Discover Section --- */
+.discover-section {
+  position: relative;
+  background: linear-gradient(var(--discover-overlay-color), var(--discover-overlay-color)), url('img/discover-lagos.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   color: var(--white);
   width: 100%;
-}
-
-.discover-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Dark overlay */
-  padding: 4rem 1rem;
-  width: 100%;
   text-align: center;
+  padding-bottom: 0;
 }
 
-.discover-overlay h2 {
+.discover-content-wrapper {
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 4rem 1rem 2rem;
+}
+
+.discover-overlay-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.discover-overlay-content h2 {
   font-size: 2.5rem;
   color: var(--white);
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
-.discover-overlay p {
+.discover-overlay-content p {
   color: #eee;
   max-width: 700px;
   margin: 0 auto 1.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-.discover-overlay .btn {
-  background-color: var(--green);
+.discover-overlay-content .btn {
+  background-color: #023a1f;
   color: var(--white);
   padding: 0.7rem 1.5rem;
   font-weight: bold;
   border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 1.5rem;
+}
+
+.lagos-flag-wrapper {
+  background-color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.lagos-flag {
+  max-width: 350px;
+  height: auto;
+  display: block;
+}
+
+/* BRT and Moving Bus Animation Container */
+.brt-animation-text-banner {
+  background-color: var(--brt-banner-bg);
+  color: var(--white);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  height: 80px;
+}
+
+.brt-animation-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+/* Bus Animation Styles */
+.bus {
+  position: absolute;
+  height: 40px;
+  width: 80px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: bus-move 15s linear infinite;
+}
+
+.brt-bus {
+  background-color: var(--brt-bus-color);
+  border: 2px solid var(--white);
+}
+
+.yellow-bus {
+  background-color: var(--yellow-bus-color);
+  border: 2px solid var(--black);
+}
+
+/* Specific bus positions and animation delays/durations */
+.bus-1 {
+  top: 10px;
+  left: -100px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
+.bus-2 {
+  top: 35px;
+  left: -200px;
+  animation-delay: 3s;
+  animation-duration: 18s;
+}
+
+.bus-3 {
+  top: 10px;
+  left: -300px;
+  animation-delay: 6s;
+  animation-duration: 16s;
+}
+
+.bus-4 {
+  top: 35px;
+  left: -400px;
+  animation-delay: 9s;
+  animation-duration: 17s;
+}
+
+.bus-5 {
+  top: 10px;
+  left: -500px;
+  animation-delay: 12s;
+  animation-duration: 15s;
+}
+
+
+@keyframes bus-move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 600px));
+  }
+
 }
 /* --- HEADLINES --- */
 #lga-grid h2 {
