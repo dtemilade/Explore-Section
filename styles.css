@@ -1,9 +1,9 @@
 /* --- GLOBAL THEME --- */
 :root {
   --green: #8cc354;
-  --blue: #1705bb;
+  --blue: #023120;
   --header-bg-color: #DFE8F9;
-  --header-link-inactive: #1705bb;
+  --header-link-inactive: #023120;
   --header-border-color: #2F3E6D;
   --discover-section-bg: #1B2956;
   --brt-banner-bg: #82ABD2;
@@ -319,25 +319,9 @@ header .container {
   align-items: center;
 }
 
-<<<<<<< HEAD
 .logo img {
   max-height: 50px;
   width: auto;
-=======
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: var(--blue);
-}
-
-.logo img {
-  max-height: 50px;
-  width: auto;
-  border-radius: 50%;
->>>>>>> f4cd21d (new pull)
 }
 
 nav ul {
@@ -407,11 +391,7 @@ nav a.active {
 }
 
 .image img,
-<<<<<<< HEAD
 .brt-section img, #more img {
-=======
-.brt-section img {
->>>>>>> f4cd21d (new pull)
   width: 100%;
   border-radius: 8px;
   margin: 1rem 0;
@@ -428,6 +408,7 @@ nav a.active {
   cursor: pointer;
   text-decoration: none;
 }
+
 .btn {
   background: var(--green);
   color: var(--white);
@@ -447,10 +428,7 @@ nav a.active {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> f4cd21d (new pull)
 .swiper-slide {
   width: 100%;
 }
@@ -536,25 +514,9 @@ nav a.active {
     gap: 1rem;
     padding: 1rem 0;
   }
-<<<<<<< HEAD
 
   .logo img {
     max-height: 40px;
-=======
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--blue);
-  }
-      
-    .logo img {
-    max-height: 50px;
-    width: auto;
-    border-radius: 50%;     
->>>>>>> f4cd21d (new pull)
   }
   .swiper-wrapper {
     display: flex;
@@ -628,13 +590,12 @@ footer {
 .tiny {
   font-size: 0.8rem;
   color: #555;
-<<<<<<< HEAD
 }
 
 
 #more {
     color: var(--white);
-    width: 80%;
+    width: 100%;
     margin: auto;
     padding: 10px;
     border: 1px solid #023120;
@@ -653,9 +614,9 @@ footer {
     display: block;
 }
 
-h2 {
+#more h2 {
       font-size: 1.8rem;
-      color: white !important;
+      color: white;
     }
 
 h3 {
@@ -683,6 +644,4 @@ p {
 #more a.active {
   background: var(--blue);
   color: var(--white);
-=======
->>>>>>> f4cd21d (new pull)
 }
