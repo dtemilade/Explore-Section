@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.toggle("active");
   });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const map = L.map("map").setView([6.5244, 3.3792], 10); // Center Lagos :contentReference[oaicite:3]{index=3}
 
