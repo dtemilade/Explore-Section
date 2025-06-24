@@ -77,22 +77,22 @@ button {
   padding-bottom: 0;
 }
 
-.discover-content-wrapper {
-  position: relative;
-  z-index: 2;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 4rem 1rem 2rem;
+.discover-content-wrapper { 
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 4rem 1rem 2rem;
 }
 
 .discover-overlay-content {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 .discover-overlay-content h2 {
@@ -124,17 +124,17 @@ button {
 }
 
 .lagos-flag-wrapper {
-  background-color: var(--white);
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: inline-block;
+    background-color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    display: inline-block;
 }
 
 .lagos-flag {
-  max-width: 350px;
-  height: auto;
-  display: block;
+    max-width: 350px;
+    height: auto;
+    display: block;
 }
 
 /* BRT and Moving Bus Animation Container */
@@ -180,8 +180,8 @@ button {
 }
 
 .yellow-bus {
-  background-color: var(--yellow-bus-color);
-  border: 2px solid var(--black);
+  background-image: url('/img/brt.png');
+  
 }
 
 /* Specific bus positions and animation delays/durations */
@@ -225,32 +225,38 @@ button {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(calc(100vw + 600px));
   }
 
 }
+
 /* --- HEADLINES --- */
-#lga-grid h2 {
+#lga-grid h2,
+#lga-map h2 {
   font-size: 2.2rem;
   color: var(--blue);
 }
 
-#lga-grid .section-divider {
+#lga-grid .section-divider,
+#lga-map .section-divider {
   height: 4px;
   width: 60px;
   background: var(--green);
   margin: 0.5rem auto 1rem;
+  border-radius: 2px;
 }
 
-#lga-grid h4 {
+#lga-grid h4,
+#lga-map h4 {
   font-weight: normal;
   color: #555;
   margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
-#lga-grid p.description {
+#lga-grid p.description,
+#lga-map p.description {
   max-width: 600px;
   margin: 1rem auto;
   color: #777;
@@ -261,67 +267,39 @@ button {
   text-align: center;
 }
 
-#lga-map h2 {
-  font-size: 2.2rem;
-  color: var(--blue);
-}
-
-#lga-map h4 {
-  color: #444;
-  margin-top: 0.5rem;
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
-#lga-map p,
-#lga-map .description {
-  color: #555;
-  max-width: 600px;
-  margin: 1rem auto 2rem;
-}
-
-#lga-map .map-image-placeholder {
-  width: 100%;
-  max-width: 900px;
-  height: 250px;
-  background-color: #ddd;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-}
-
-#lga-map .btn {
-  margin-top: 2rem;
-}
-
-#lga-map .section-divider {
-  width: 60px;
-  height: 4px;
-  background: var(--green);
-  margin: 1rem auto 1.5rem;
-  border-radius: 2px;
-}
 /* --- HEADER --- */
 header {
-  background: var(--white);
-  border-bottom: 1px solid #ccc;
+  background: var(--header-bg-color); /* Sky blue header background from new variable */
+  border-bottom: 1px solid var(--header-border-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  padding: 0.5rem 0;
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--blue); /* Logo text color changed to blue as per image */
 }
 
 .logo img {
   max-height: 50px;
   width: auto;
+  border-radius: 50%;
 }
 
 nav ul {
@@ -333,20 +311,23 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--header-link-inactive); /* Blue for inactive links as per user request */
   padding: 0.5rem 1rem;
   border-radius: 5px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  background: var(--hover-bg);
-  color: var(--green);
+  background: rgba(255, 255, 255, 0.1); /* Subtle white hover */
+  color: var(--white);
 }
 
 nav a.active {
-  background: var(--blue);
-  color: var(--white);
+  background: #0F4AA4; /* Blue for active button */
+  color: var(--white); /* White text for active button */
+  font-weight: bold;
+  padding: 0.6rem 1.2rem; /* Adjusted padding for active button to match image */
+  border-radius: 4px; /* Slightly sharper border-radius for button */
 }
 
 .hamburger {
@@ -359,7 +340,7 @@ nav a.active {
 .hamburger span {
   height: 3px;
   width: 25px;
-  background: var(--blue);
+  background: var(--blue); /* Hamburger lines changed to blue */
   border-radius: 5px;
 }
 
@@ -384,22 +365,64 @@ nav a.active {
 }
 
 .text,
-.brt-section,
-.image {
+.brt-section {
   flex: 1;
   min-width: 250px;
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.image img,
-.brt-section img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 1rem 0;
+.brt-section {
+    background-color: #e0f2f7;
 }
+
+.text h2, .brt-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.brt-section h2 {
+    color: var(--blue);
+}
+
+.text p, .brt-section p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.brt-section p {
+    color: #444;
+}
+
 
 /* --- BUTTONS --- */
-.btn,
+.btn {
+  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #023a1f; /* Specific dark green for all .btn instances */
+  color: var(--white);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--dark-green-hover);
+  transform: translateY(-2px);
+}
+
 .btn-outline {
+  border: 2px solid var(--green);
+  color: var(--green);
+  background: transparent;
   padding: 0.6rem 1.2rem;
   display: inline-block;
   margin-top: 1rem;
@@ -407,30 +430,28 @@ nav a.active {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.btn {
+.btn-outline:hover {
   background: var(--green);
   color: var(--white);
-  border: none;
+  transform: translateY(-2px);
 }
 
-.btn-outline {
-  border: 2px solid var(--green);
-  color: var(--green);
-  background: transparent;
-}
-
-/* --- GRID FOR PLACES IN LAGOS --- */
+/* --- GRID FOR PLACES IN LAGOS (Swiper-like behavior on mobile) --- */
 .swiper-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .swiper-slide {
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .place-img {
@@ -445,26 +466,12 @@ nav a.active {
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-.lga-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-}
 
-.lga-title {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: var(--white);
-  text-align: center;
-  padding: 0.5rem;
-  font-weight: bold;
-}
 .hover-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .hover-label {
@@ -489,16 +496,28 @@ nav a.active {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* --- MOBILE RESPONSIVE SLIDE --- */
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  header {
+    padding: 0.3rem 0;
+  }
+
   .header-container {
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 1rem;
   }
+
   nav {
     width: 100%;
     display: none;
     flex-direction: column;
+    text-align: center;
   }
 
   nav.active {
@@ -514,24 +533,15 @@ nav a.active {
     gap: 1rem;
     padding: 1rem 0;
   }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--blue);
-      }
-      
-  .logo img {
-    max-height: 40px;
-  }
+
+
   .swiper-wrapper {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
     padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
   }
   .swiper-slide {
     flex: 0 0 80%;
@@ -542,9 +552,9 @@ nav a.active {
   .place-img {
     height: 200px;
   }
+
     .discover-section {
       background-attachment: scroll;
-      /* Disable parallax for better performance */
     }
   
     .discover-overlay h2 {
@@ -556,7 +566,7 @@ nav a.active {
     }
 }
 
-/* --- CONTACT & FOOTER --- */
+/* --- CONTACT & FEEDBACK --- */
 .contact input,
 .contact textarea {
   width: 100%;
@@ -564,17 +574,60 @@ nav a.active {
   margin: 0.6rem 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .contact-form button {
   width: 100%;
 }
 
+.contact-form, .feedback-form {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h4, .feedback-form h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.feedback-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* --- FOOTER --- */
 footer {
-  background: var(--green);
+  background: var(--blue);
   color: var(--white);
   padding: 2rem 0;
   margin-top: 2rem;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.footer-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .footer-links {
@@ -588,14 +641,20 @@ footer {
 
 .footer-links a {
   text-decoration: none;
-  color: #000;
+  color: var(--white);
+  transition: text-decoration 0.2s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 .small {
   font-size: 0.9rem;
+  color: #ccc;
 }
 
 .tiny {
   font-size: 0.8rem;
-  color: #555;
+  color: #ccc;
 }
