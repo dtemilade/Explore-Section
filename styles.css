@@ -391,7 +391,7 @@ nav a.active {
 }
 
 .image img,
-.brt-section img {
+.brt-section img, #more img {
   width: 100%;
   border-radius: 8px;
   margin: 1rem 0;
@@ -514,15 +514,7 @@ nav a.active {
     gap: 1rem;
     padding: 1rem 0;
   }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--blue);
-      }
-      
+
   .logo img {
     max-height: 40px;
   }
@@ -598,4 +590,58 @@ footer {
 .tiny {
   font-size: 0.8rem;
   color: #555;
+}
+
+
+#more {
+    color: var(--white);
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #023120;
+    background-color: #023120;
+    box-shadow: black;
+}
+
+#more section {
+    text-align: justify;
+    display: none;
+    padding: 10px;
+    font-size: 25px;
+}
+
+#more section:target {
+    display: block;
+}
+
+h2 {
+      font-size: 1.8rem;
+      color: white !important;
+    }
+
+h3 {
+      font-size: 1.5rem;
+      margin: 1.2rem 0;
+    }
+
+p {
+      font-size: 1.25rem;
+    }
+
+#more a {
+  text-decoration: none;
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#more a:hover {
+  background: var(--hover-bg);
+  color: var(--green);
+}
+
+#more a.active {
+  background: var(--blue);
+  color: var(--white);
 }
