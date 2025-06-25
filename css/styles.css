@@ -30,6 +30,234 @@ body {
   background-color: var(--grey);
   color: #333;
 }
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: #004d80;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.hero-overlay {
+  background: rgba(243, 240, 240, 0.274);
+  /* This is the transparent black overlay */
+  padding: 60px 20px;
+  border-radius: 8px;
+}
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-actions .btn {
+  font-size: 1rem;
+  padding: 10px 24px;
+  background-color: #0e4833;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.hero-actions .btn:hover {
+  background-color: #093820;
+}
+
+.scroll-img {
+  max-height: 120px;
+  width: auto;
+}
+
+/* Appreciation Sections */
+
+.gov-appreciation-section {
+  background-color: #f8f9fa;
+  /* light background */
+  text-align: center;
+  padding: 50px 20px;
+  color: #0e4833;
+  /* deep green for text */
+}
+
+.gov-appreciation-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #093820;
+  /* darker green */
+}
+
+.gov-appreciation-section img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gov-appreciation-section p:first-of-type {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #cda309;
+  /* gold tone to highlight GOV. BABAJIDE SANWO-OLU */
+  margin-top: -10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gov-appreciation-section p:nth-of-type(2) {
+  font-size: 1.1rem;
+  margin: 20px auto;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.gov-appreciation-section .btn-sm {
+  padding: 10px 20px;
+  background-color: #0e4833;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.gov-appreciation-section .btn-sm:hover {
+  background-color: #093820;
+}
+
+.appreciation-section small {
+  display: block;
+  font-size: 0.7rem;
+  color: #0e4833;
+  margin-bottom: 10px;
+}
+.appreciation-section {
+  padding: 30px 15px;
+  margin: 20px 0;
+  background: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.appreciation-section small {
+  display: block;
+  font-size: 0.7rem;
+  color: #0e4833;
+  margin-bottom: 10px;
+}
+
+.appreciation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 20px;
+}
+
+.appreciation-grid .appreciation-section {
+  flex: 1 1 45%;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.appreciation-section img {
+  max-width: 300px;
+  height: auto;
+  margin: 15px 0;
+}
+
+.appreciation-grid .section-divider {
+  height: 4px;
+  width: 60px;
+  background: var(--green);
+  margin: 0.5rem auto 1rem;
+  border-radius: 2px;
+}
+
+.appreciation-item {
+  text-align: center;
+  flex: 1;
+
+}
+
+.appreciation-grid .section-divider {
+  height: 4px;
+  width: 60px;
+  background: var(--green);
+  margin: 0.5rem auto 1rem;
+  border-radius: 2px;
+}
+
+.appreciation-item {
+  text-align: center;
+  flex: 1;
+
+}
+/* Grid Layout for Facilitators */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.grid-item img {
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
+.grid-item h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.grid-item p {
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive - for wider screens */
+@media (min-width: 600px) {
+  .grid {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .grid-item {
+    width: 30%;
+  }
+}
 
 input,
 textarea,
@@ -121,7 +349,6 @@ header .container {
   font-size: 1.1rem;
   font-weight: bold;
   color: var(--blue);
-  /* Logo text color changed to blue as per image */
 }
 
 .logo img {
@@ -149,7 +376,6 @@ li a {
 nav a {
   text-decoration: none;
   color: var(--header-link-inactive);
-  /* Blue for inactive links as per user request */
   padding: 0.5rem 1rem;
   border-radius: 5px;
   transition: background 0.3s ease, color 0.3s ease;
@@ -157,20 +383,15 @@ nav a {
 
 nav a:hover {
   background: #023120;
-  /* Subtle white hover */
   color: var(--white);
 }
 
 nav a.active {
   background: #023120;
-  /* Blue for active button */
   color: var(--white);
-  /* White text for active button */
   font-weight: bold;
   padding: 0.6rem 1.2rem;
-  /* Adjusted padding for active button to match image */
   border-radius: 4px;
-  /* Slightly sharper border-radius for button */
 }
 
 /* --- SECTIONS --- */
@@ -231,15 +452,7 @@ nav a.active {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 400px;
-  /* Default minimum height for larger screens */
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  #lgproj {
-    min-height: 250px;
-    /* Reduced minimum height for mobile devices */
-  }
 }
 
 
@@ -308,7 +521,15 @@ nav a.active {
   color: var(--green);
   background: transparent;
 }
-
+.btn-sm {
+  display: inline-block;
+  background: #0e4833;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
 .quiz-buttons .btn-sm {
   margin: 0.5rem;
   padding: 0.4rem 0.8rem;
@@ -328,7 +549,6 @@ nav a.active {
   cursor: pointer;
   text-decoration: none;
   background-color: #023a1f;
-  /* Specific dark green for all .btn instances */
   color: var(--white);
   border: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -370,7 +590,6 @@ nav a.active {
   height: 3px;
   width: 25px;
   background: var(--blue);
-  /* Hamburger lines changed to blue */
   border-radius: 5px;
 }
 
@@ -386,22 +605,6 @@ nav a.active {
 
 .brt-section {
   background-color: #e0f2f7;
-}
-
-.appreciation-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-  padding-bottom: 20px;
-  overflow: scroll;
-
-}
-
-.appreciation-item {
-  text-align: center;
-  flex: 1;
-
 }
 
 .circle.placeholder {
@@ -601,7 +804,6 @@ nav a.active {
 /* BRT and Moving Bus Animation Container (now applied to .brt-animation-text-banner) */
 .brt-animation-text-banner {
   background-color: var(--brt-banner-bg);
-  /* Darker blue for the banner background */
   color: var(--white);
   padding: 1rem 0;
   text-align: center;
@@ -612,14 +814,11 @@ nav a.active {
   width: 100%;
   flex-shrink: 0;
   position: relative;
-  /* For absolute positioning of buses */
   z-index: 2;
   overflow: hidden;
-  /* Hide buses outside the container */
   height: 90px;
-  /* Adjusted height for the animation area to accommodate larger buses */
   padding-top: 5px;
-  /* Adjust padding to make space for buses */
+
 }
 
 .brt-animation-text-overlay {
@@ -628,25 +827,19 @@ nav a.active {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  /* Ensure text is above buses */
   white-space: nowrap;
-  /* Prevent text wrapping */
+
 }
 
 /* Bus Animation Styles - Common styles for all buses */
 .bus {
   position: absolute;
   height: 70px;
-  /* Increased height for bigger images */
   width: 140px;
-  /* Increased width for bigger images */
   border-radius: 8px;
   box-shadow: none;
-  /* Removed shadow as requested */
   animation: bus-move 15s linear infinite;
-  /* Base animation */
   background-size: contain;
-  /* Ensure image fits within the div */
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -654,25 +847,16 @@ nav a.active {
 /* Styles for BRT buses using background-image */
 .brt-bus {
   background-image: url('/img/brt-bus.png');
-  /* Replace with your BRT image path */
   background-color: transparent;
-  /* No background color needed as image fills */
   border: none;
-  /* No border needed as image fills */
 }
 
 /* Styles for Yellow Lagos buses using background-image */
 .yellow-bus {
   background-image: url('/img/hand-drawn-yellow-bus-black-260nw-731778889-removebg-preview.png');
-  /* Updated placeholder for bigger yellow bus */
   background-color: transparent;
-  /* No background color needed as image fills */
   border: none;
-  /* No border needed as image fills */
 }
-
-/* Removed specific CSS drawing for yellow-bus, its pseudo-elements, and wheels */
-/* .yellow-bus::before, .yellow-bus::after, .yellow-bus .wheel { } */
 
 /* Specific bus positions and animation delays/durations */
 .bus-1 {
@@ -716,13 +900,9 @@ nav a.active {
   0% {
     transform: translateX(0);
   }
-
-  /* Start off-screen left */
   100% {
     transform: translateX(calc(100vw + 600px));
   }
-
-  /* Move across screen + off-screen right */
 }
 
 /* --- HEADLINES --- */
@@ -873,6 +1053,19 @@ h3 {
 }
 
 /* --- MOBILE RESPONSIVE SLIDE --- */
+@media (max-width: 600px) {
+  .gov-appreciation-section img {
+    max-width: 120px;
+  }
+
+  .gov-appreciation-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .gov-appreciation-section p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -944,6 +1137,39 @@ h3 {
   .discover-overlay p {
     font-size: 1rem;
   }
+   #lgproj {
+    min-height: 250px;
+    /* Reduced minimum height for mobile devices */
+  }
+    .footer-split {
+      flex-direction: column;
+    }
+  
+    .footer-divider {
+      display: none;
+    }
+  
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+        .appreciation-grid {
+          flex-direction: column;
+        }
+    
+        .appreciation-grid .appreciation-section {
+          max-width: 100%;
+        }
+    
+        .gov-appreciation-section img {
+          max-width: 100%;
+          /* Ensure it doesn't overflow */
+        }
+        .appreciation-section img {
+          max-width: 100%;
+        }
+        .appreciation-section img {
+          max-width: 100%;
+           }
 }
 
 /* --- CONTACT & FEEDBACK --- */
@@ -1082,12 +1308,6 @@ footer {
   padding: 0 1rem;
 }
 
-@media (min-width: 768px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .footer-heading {
   font-size: 1.25rem;
   font-weight: 600;
@@ -1172,14 +1392,4 @@ footer {
   width: 2px;
   background-color: rgba(255, 255, 255, 0.2);
   height: auto;
-}
-
-@media (max-width: 768px) {
-  .footer-split {
-    flex-direction: column;
-  }
-
-  .footer-divider {
-    display: none;
-  }
 }
